@@ -31,3 +31,7 @@
     name: barcodescan_sse
     state: started
     enabled: true
+- service:
+    name: read_from_scanner 
+    state: started
+    enabled: true
