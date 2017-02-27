@@ -15,8 +15,9 @@
 #
 ---
 
-- hosts: pull_mode_hosts
-  remote_user: root
+- hosts: pis 
+  remote_user: pi 
+  become: true
 
   vars:
 
@@ -40,7 +41,9 @@
   tasks:
 
     - name: Install ansible
-      yum: pkg=ansible state=installed
+      apt: name=ansible state=installed
+    - name: Install git 
+      apt: name=git state=installed
 
     - name: Create local directory to work from
       file: path={{workdir}} state=directory owner=root group=root mode=0751
