@@ -5,11 +5,6 @@
   user: root
   connection: local 
 
-- name: "redis is installed"
-  apt:
-    name: redis-server
 
-- service:
-    name: redis-server
-    state: started
-    enabled: true
+  roles:
+    - scanner
