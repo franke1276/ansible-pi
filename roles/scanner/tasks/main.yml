@@ -25,10 +25,10 @@
     state: latest
       
 - service:
-    name: barcodescan_sse
+    name: barcodescanner_server
     state: started
     enabled: true
 - service:
-    name: read_from_scanner 
+    name: barcodescanner_reader 
     state: started
     enabled: true
