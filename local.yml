@@ -2,8 +2,7 @@
 
 - hosts: localhost
   user: root
-  connection: local 
-
+  gather_facts: yes
 
   roles:
     - scanner
