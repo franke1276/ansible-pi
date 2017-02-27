@@ -22,7 +22,6 @@
 - pip:
     name: PyBarCodeScan 
     virtualenv: /venv
-    virtualenv_python: python3 
     state: latest
       
 - service:
