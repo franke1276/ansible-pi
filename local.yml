@@ -1,6 +1,10 @@
 ---
 
-- name: Ansible Playbook for configuring brand new Raspberry Pi
+- name: "redis is installed"
+  apt:
+    name: redis-server
 
-  roles:
-    - scanner 
+- service:
+    name: redis-server
+    state: started
+    enabled: true
