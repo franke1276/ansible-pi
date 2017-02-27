@@ -1,6 +1,7 @@
 ---
 
 - name: Pull for PI
+  hosts: localhost
   user: root
   connection: local 
 
