@@ -1,5 +1,10 @@
 ---
 
+- name: Pull for PI
+  hosts: localhost
+  user: root
+  connection: local 
+
 - name: "redis is installed"
   apt:
     name: redis-server
