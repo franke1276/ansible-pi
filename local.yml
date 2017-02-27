@@ -2,6 +2,7 @@
 
 - name: Pull for PI
   hosts: localhost
+  ansible_connection: local  
   user: root
   connection: local 
 
