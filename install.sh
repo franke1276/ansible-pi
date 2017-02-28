@@ -3,12 +3,15 @@ set -e
 
 repo=$1
 target=$2
+log_dir=$3
 
-date_str=$(date)
+date_str=$(date +%Y-%m-%d:%H:%M:%S)
+log_file="$log_dir/run_$date_str.log"
 echo "--- run install $date_str ---"
 echo "Repo: $repo "
 echo "target: $target"
-
+echo "log_file: $log_file"
+mkdir -p $log_dir
 has_changes=false
 if [ ! -e $target ]; then
   echo "no target found. Clone $repo to target"
@@ -27,8 +30,13 @@ else
   fi  
 fi
 
-if [ $has_changes ];then
+if [ "$has_changes" = true ] ;then
   echo "run update:"
-  bash ./update.sh
+  bash ./update.sh > "$log_file"  2>&1
+  if  [ $? -eq 0 ] ; then
+    echo "update successful."
+  else
+    echo "update ends with errors: see $log_file" 
+  fi
 fi
 echo "install finished. had changes: $has_changes"
