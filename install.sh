@@ -31,4 +31,4 @@ if [ $has_changes ];then
   echo "run update:"
   bash ./update.sh
 fi
-echo "install finished. had changes: $had_changes"
+echo "install finished. had changes: $has_changes"
